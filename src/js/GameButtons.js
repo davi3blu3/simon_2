@@ -1,5 +1,5 @@
 const React = require('react')
-const GreenButton = require('./GreenButton')
+const Button = require('./Button')
 
 
 const GameButtons = React.createClass({
@@ -10,12 +10,12 @@ const GameButtons = React.createClass({
         return (
             <div>
                 <div className="row">
-                    <GreenButton />
-                    <div id="red" className="red-btn game-button"></div>
+                    <Button color="green" />
+                    <Button color="red"/>
                 </div>
                 <div className="row">
-                    <div id="yellow" className="yellow-btn game-button"></div>
-                    <div id="blue" className="blue-btn game-button"></div>
+                    <Button color="yellow" />
+                    <Button color="blue"/>
                 </div>
             </div>
         )

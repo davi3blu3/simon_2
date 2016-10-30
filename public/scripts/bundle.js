@@ -49,7 +49,7 @@
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
 	var GameButtons = __webpack_require__(172);
-	var GameControls = __webpack_require__(173);
+	var GameControls = __webpack_require__(174);
 
 	var SimonGame = React.createElement(
 	    'div',
@@ -21469,7 +21469,7 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var GreenButton = __webpack_require__(174);
+	var Button = __webpack_require__(173);
 
 	var GameButtons = React.createClass({
 	    displayName: 'GameButtons',
@@ -21482,14 +21482,14 @@
 	            React.createElement(
 	                'div',
 	                { className: 'row' },
-	                React.createElement(GreenButton, null),
-	                React.createElement('div', { id: 'red', className: 'red-btn game-button' })
+	                React.createElement(Button, { color: 'green' }),
+	                React.createElement(Button, { color: 'red' })
 	            ),
 	            React.createElement(
 	                'div',
 	                { className: 'row' },
-	                React.createElement('div', { id: 'yellow', className: 'yellow-btn game-button' }),
-	                React.createElement('div', { id: 'blue', className: 'blue-btn game-button' })
+	                React.createElement(Button, { color: 'yellow' }),
+	                React.createElement(Button, { color: 'blue' })
 	            )
 	        );
 	    }
@@ -21504,65 +21504,14 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-	var GreenButton = __webpack_require__(174);
 
-	var GameControls = React.createClass({
-	    displayName: 'GameControls',
-
-	    handleClick: function handleClick() {
-	        console.log("start clicked");
-	        GreenButton.handleClick();
-	    },
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'inner-circle' },
-	            React.createElement(
-	                'h1',
-	                { className: 'game-title' },
-	                'simon'
-	            ),
-	            React.createElement(
-	                'div',
-	                { className: 'game-controls' },
-	                React.createElement(
-	                    'div',
-	                    { id: 'counter', className: 'round-counter' },
-	                    '00'
-	                ),
-	                React.createElement(
-	                    'button',
-	                    { id: 'start', className: 'control-btn', onClick: this.handleClick },
-	                    'start/restart'
-	                )
-	            ),
-	            React.createElement(
-	                'div',
-	                null,
-	                React.createElement(
-	                    'button',
-	                    { id: 'strict', className: 'control-btn' },
-	                    'strict mode'
-	                )
-	            )
-	        );
-	    }
-	});
-
-	module.exports = GameControls;
-
-/***/ },
-/* 174 */
-/***/ function(module, exports, __webpack_require__) {
-
-	'use strict';
-
-	var React = __webpack_require__(1);
-
-	var GreenButton = React.createClass({
-	    displayName: 'GreenButton',
+	var Button = React.createClass({
+	    displayName: 'Button',
 
 	    greenTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+	    redTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+	    yellowTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+	    blueTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
 	    getInitialState: function getInitialState() {
 	        return {
 	            selected: ''
@@ -21572,20 +21521,69 @@
 	        var _this = this;
 
 	        if (this.state.selected === '') {
-	            this.setState({ selected: ' green-pressed' });
+	            console.log(this.props.color + " button clicked!");
+	            this.setState({ selected: ' ' + this.props.color + '-pressed' });
 	            // Play Audio
-	            this.greenTone.play();
+	            this[this.props.color + 'Tone'].play();
 	            setTimeout(function () {
 	                _this.setState({ selected: '' });
 	            }, 800);
 	        }
 	    },
 	    render: function render() {
-	        return React.createElement('div', { className: "green-btn game-button" + this.state.selected, onClick: this.handleClick });
+	        return React.createElement('div', { className: this.props.color + "-btn game-button" + this.state.selected, onClick: this.handleClick });
 	    }
 	});
 
-	module.exports = GreenButton;
+	module.exports = Button;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var GameControls = React.createClass({
+	    displayName: "GameControls",
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            { className: "inner-circle" },
+	            React.createElement(
+	                "h1",
+	                { className: "game-title" },
+	                "simon"
+	            ),
+	            React.createElement(
+	                "div",
+	                { className: "game-controls" },
+	                React.createElement(
+	                    "div",
+	                    { id: "counter", className: "round-counter" },
+	                    "00"
+	                ),
+	                React.createElement(
+	                    "button",
+	                    { id: "start", className: "control-btn" },
+	                    "start/restart"
+	                )
+	            ),
+	            React.createElement(
+	                "div",
+	                null,
+	                React.createElement(
+	                    "button",
+	                    { id: "strict", className: "control-btn" },
+	                    "strict mode"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = GameControls;
 
 /***/ }
 /******/ ]);

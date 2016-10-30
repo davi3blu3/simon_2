@@ -15,6 +15,8 @@ body {
 }
 
 .game-button {
+    height: 45vmin;
+    width: 45vmin;
 	display: inline-block;
 }
 
@@ -24,6 +26,9 @@ body {
 
 .green-btn {
     background-color: rgb(0, 155, 0);
+    border-radius: 45vmin 0 0 0;
+    -moz-border-radius: 45vmin 0 0 0;
+    -webkit-border-radius: 45vmin 0 0 0;
 }
 
 .green-pressed {
@@ -32,14 +37,35 @@ body {
 
 .red-btn {
     background-color: rgb(155, 0, 0);
+    border-radius: 0 45vmin 0 0;
+    -moz-border-radius: 0 45vmin 0 0;
+    -webkit-border-radius: 0 45vmin 0 0;
+}
+
+.red-pressed {
+    background-color: rgb(255, 0, 0);
 }
 
 .yellow-btn {
     background-color: rgb(155, 155, 0);
+    border-radius: 0 0 0 45vmin;
+    -moz-border-radius: 0 0 0 45vmin;
+    -webkit-border-radius: 0 0 0 45vmin;
+}
+
+.yellow-pressed {
+    background-color: rgb(255, 255, 0);
 }
 
 .blue-btn {
     background-color: rgb(0, 0, 155);
+    border-radius: 0 0 45vmin 0;
+    -moz-border-radius: 0 0 45vmin 0;
+    -webkit-border-radius: 0 0 45vmin 0;
+}
+
+.blue-pressed {
+    background-color: rgb(0, 0, 255);
 }
 
 .control-btn {
@@ -58,6 +84,9 @@ body {
 
 
 .inner-circle {
+    height: 55vmin;
+    width: 55vmin;
+    border-radius: 55vmin;    
     position: absolute;
     display: flex;
     justify-content: center;
@@ -79,77 +108,3 @@ body {
     margin-right: 10px;
     display: inline-block;
 }
-
-/*@media all and (orientation: portrait) {*/
-    .game-button {
-        height: 45vmin;
-        width: 45vmin;
-    }
-
-    .green-btn {
-        border-radius: 45vmin 0 0 0;
-        -moz-border-radius: 45vmin 0 0 0;
-        -webkit-border-radius: 45vmin 0 0 0;
-    }
-
-    .red-btn {
-        border-radius: 0 45vmin 0 0;
-        -moz-border-radius: 0 45vmin 0 0;
-        -webkit-border-radius: 0 45vmin 0 0;
-    }
-
-    .yellow-btn {
-        border-radius: 0 0 0 45vmin;
-        -moz-border-radius: 0 0 0 45vmin;
-        -webkit-border-radius: 0 0 0 45vmin;
-    }
-
-    .blue-btn {
-        border-radius: 0 0 45vmin 0;
-        -moz-border-radius: 0 0 45vmin 0;
-        -webkit-border-radius: 0 0 45vmin 0;
-    }
-    
-    .inner-circle {
-        height: 55vmin;
-        width: 55vmin;
-        border-radius: 55vmin;
-    }    
-/*}*/
-/*
-@media all and (orientation: landscape) {
-    .game-button {
-        height: 45vh;
-        width: 45vh;
-    }
-
-    .green-btn {
-        border-radius: 45vh 0 0 0;
-        -moz-border-radius: 45vh 0 0 0;
-        -webkit-border-radius: 45vh 0 0 0;
-    }
-
-    .red-btn {
-        border-radius: 0 45vh 0 0;
-        -moz-border-radius: 0 45vh 0 0;
-        -webkit-border-radius: 0 45vh 0 0;
-    }
-
-    .yellow-btn {
-        border-radius: 0 0 0 45vh;
-        -moz-border-radius: 0 0 0 45vh;
-        -webkit-border-radius: 0 0 0 45vh;
-    }
-
-    .blue-btn {
-        border-radius: 0 0 45vh 0;
-        -moz-border-radius: 0 0 45vh 0;
-        -webkit-border-radius: 0 0 45vh 0;
-    }
-
-    .inner-circle {
-        height: 55vh;
-        width: 55vh;
-        border-radius: 55vw;
-    }    
-}*/

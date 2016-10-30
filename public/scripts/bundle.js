@@ -21469,30 +21469,7 @@
 	'use strict';
 
 	var React = __webpack_require__(1);
-
-	var GreenButton = React.createClass({
-	    displayName: 'GreenButton',
-
-	    getInitialState: function getInitialState() {
-	        return {
-	            selected: ''
-	        };
-	    },
-	    handleClick: function handleClick() {
-	        var _this = this;
-
-	        if (this.state.selected === '') {
-	            this.setState({ selected: ' green-pressed' });
-	            // Play Audio
-	            setTimeout(function () {
-	                _this.setState({ selected: '' });
-	            }, 800);
-	        }
-	    },
-	    render: function render() {
-	        return React.createElement('div', { className: "green-btn game-button" + this.state.selected, onClick: this.handleClick });
-	    }
-	});
+	var GreenButton = __webpack_require__(174);
 
 	var GameButtons = React.createClass({
 	    displayName: 'GameButtons',
@@ -21524,42 +21501,48 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
+	var GreenButton = __webpack_require__(174);
 
 	var GameControls = React.createClass({
-	    displayName: "GameControls",
+	    displayName: 'GameControls',
+
+	    handleClick: function handleClick() {
+	        console.log("start clicked");
+	        GreenButton.handleClick();
+	    },
 	    render: function render() {
 	        return React.createElement(
-	            "div",
-	            { className: "inner-circle" },
+	            'div',
+	            { className: 'inner-circle' },
 	            React.createElement(
-	                "h1",
-	                { className: "game-title" },
-	                "simon"
+	                'h1',
+	                { className: 'game-title' },
+	                'simon'
 	            ),
 	            React.createElement(
-	                "div",
-	                { className: "game-controls" },
+	                'div',
+	                { className: 'game-controls' },
 	                React.createElement(
-	                    "div",
-	                    { id: "counter", className: "round-counter" },
-	                    "00"
+	                    'div',
+	                    { id: 'counter', className: 'round-counter' },
+	                    '00'
 	                ),
 	                React.createElement(
-	                    "button",
-	                    { id: "start", className: "control-btn" },
-	                    "start/restart"
+	                    'button',
+	                    { id: 'start', className: 'control-btn', onClick: this.handleClick },
+	                    'start/restart'
 	                )
 	            ),
 	            React.createElement(
-	                "div",
+	                'div',
 	                null,
 	                React.createElement(
-	                    "button",
-	                    { id: "strict", className: "control-btn" },
-	                    "strict mode"
+	                    'button',
+	                    { id: 'strict', className: 'control-btn' },
+	                    'strict mode'
 	                )
 	            )
 	        );
@@ -21567,6 +21550,42 @@
 	});
 
 	module.exports = GameControls;
+
+/***/ },
+/* 174 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	var React = __webpack_require__(1);
+
+	var GreenButton = React.createClass({
+	    displayName: 'GreenButton',
+
+	    greenTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+	    getInitialState: function getInitialState() {
+	        return {
+	            selected: ''
+	        };
+	    },
+	    handleClick: function handleClick() {
+	        var _this = this;
+
+	        if (this.state.selected === '') {
+	            this.setState({ selected: ' green-pressed' });
+	            // Play Audio
+	            this.greenTone.play();
+	            setTimeout(function () {
+	                _this.setState({ selected: '' });
+	            }, 800);
+	        }
+	    },
+	    render: function render() {
+	        return React.createElement('div', { className: "green-btn game-button" + this.state.selected, onClick: this.handleClick });
+	    }
+	});
+
+	module.exports = GreenButton;
 
 /***/ }
 /******/ ]);

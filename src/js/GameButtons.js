@@ -1,11 +1,14 @@
 const React = require('react')
 
 const GameButtons = React.createClass({
+    colorchange: function() {
+
+    },
     render() {
         return (
             <div>
                 <div className="row">
-                    <div id="green" className="green-btn game-button"></div>
+                    <div id="green" className="green-btn game-button" onClick={colorchange(green)}></div>
                     <div id="red" className="red-btn game-button"></div>
                 </div>
                 <div className="row">

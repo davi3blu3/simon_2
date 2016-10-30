@@ -21472,6 +21472,8 @@
 
 	var GameButtons = React.createClass({
 	    displayName: "GameButtons",
+
+	    colorchange: function colorchange() {},
 	    render: function render() {
 	        return React.createElement(
 	            "div",
@@ -21479,7 +21481,7 @@
 	            React.createElement(
 	                "div",
 	                { className: "row" },
-	                React.createElement("div", { id: "green", className: "green-btn game-button" }),
+	                React.createElement("div", { id: "green", className: "green-btn game-button", onClick: colorchange(green) }),
 	                React.createElement("div", { id: "red", className: "red-btn game-button" })
 	            ),
 	            React.createElement(

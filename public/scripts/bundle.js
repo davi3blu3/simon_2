@@ -48,66 +48,8 @@
 
 	var React = __webpack_require__(1);
 	var ReactDOM = __webpack_require__(34);
-
-	var GameControls = React.createClass({
-	    displayName: 'GameControls',
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            { className: 'inner-circle' },
-	            React.createElement(
-	                'h1',
-	                { className: 'game-title' },
-	                'simon'
-	            ),
-	            React.createElement(
-	                'div',
-	                { className: 'game-controls' },
-	                React.createElement(
-	                    'div',
-	                    { id: 'counter', className: 'round-counter' },
-	                    '00'
-	                ),
-	                React.createElement(
-	                    'button',
-	                    { id: 'start', className: 'control-btn' },
-	                    'start/restart'
-	                )
-	            ),
-	            React.createElement(
-	                'div',
-	                null,
-	                React.createElement(
-	                    'button',
-	                    { id: 'strict', className: 'control-btn' },
-	                    'strict mode'
-	                )
-	            )
-	        );
-	    }
-	});
-
-	var GameButtons = React.createClass({
-	    displayName: 'GameButtons',
-	    render: function render() {
-	        return React.createElement(
-	            'div',
-	            null,
-	            React.createElement(
-	                'div',
-	                { className: 'row' },
-	                React.createElement('div', { id: 'green', className: 'green-btn game-button' }),
-	                React.createElement('div', { id: 'red', className: 'red-btn game-button' })
-	            ),
-	            React.createElement(
-	                'div',
-	                { className: 'row' },
-	                React.createElement('div', { id: 'yellow', className: 'yellow-btn game-button' }),
-	                React.createElement('div', { id: 'blue', className: 'blue-btn game-button' })
-	            )
-	        );
-	    }
-	});
+	var GameButtons = __webpack_require__(172);
+	var GameControls = __webpack_require__(173);
 
 	var SimonGame = React.createElement(
 	    'div',
@@ -21519,6 +21461,86 @@
 
 	module.exports = ReactDOMNullInputValuePropHook;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(3)))
+
+/***/ },
+/* 172 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var GameButtons = React.createClass({
+	    displayName: "GameButtons",
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            null,
+	            React.createElement(
+	                "div",
+	                { className: "row" },
+	                React.createElement("div", { id: "green", className: "green-btn game-button" }),
+	                React.createElement("div", { id: "red", className: "red-btn game-button" })
+	            ),
+	            React.createElement(
+	                "div",
+	                { className: "row" },
+	                React.createElement("div", { id: "yellow", className: "yellow-btn game-button" }),
+	                React.createElement("div", { id: "blue", className: "blue-btn game-button" })
+	            )
+	        );
+	    }
+	});
+
+	module.exports = GameButtons;
+
+/***/ },
+/* 173 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
+
+	var React = __webpack_require__(1);
+
+	var GameControls = React.createClass({
+	    displayName: "GameControls",
+	    render: function render() {
+	        return React.createElement(
+	            "div",
+	            { className: "inner-circle" },
+	            React.createElement(
+	                "h1",
+	                { className: "game-title" },
+	                "simon"
+	            ),
+	            React.createElement(
+	                "div",
+	                { className: "game-controls" },
+	                React.createElement(
+	                    "div",
+	                    { id: "counter", className: "round-counter" },
+	                    "00"
+	                ),
+	                React.createElement(
+	                    "button",
+	                    { id: "start", className: "control-btn" },
+	                    "start/restart"
+	                )
+	            ),
+	            React.createElement(
+	                "div",
+	                null,
+	                React.createElement(
+	                    "button",
+	                    { id: "strict", className: "control-btn" },
+	                    "strict mode"
+	                )
+	            )
+	        );
+	    }
+	});
+
+	module.exports = GameControls;
 
 /***/ }
 /******/ ]);

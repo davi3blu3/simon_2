@@ -76,43 +76,43 @@ body {
     display: inline-block;
 }
 
-@media all and (orientation: portrait) {
+/*@media all and (orientation: portrait) {*/
     .game-button {
-        height: 45vw;
-        width: 45vw;
+        height: 45vmax;
+        width: 45vmax;
     }
 
     .green-btn {
-        border-radius: 45vw 0 0 0;
-        -moz-border-radius: 45vw 0 0 0;
-        -webkit-border-radius: 45vw 0 0 0;
+        border-radius: 45vmax 0 0 0;
+        -moz-border-radius: 45vmax 0 0 0;
+        -webkit-border-radius: 45vmax 0 0 0;
     }
 
     .red-btn {
-        border-radius: 0 45vw 0 0;
-        -moz-border-radius: 0 45vw 0 0;
-        -webkit-border-radius: 0 45vw 0 0;
+        border-radius: 0 45vmax 0 0;
+        -moz-border-radius: 0 45vmax 0 0;
+        -webkit-border-radius: 0 45vmax 0 0;
     }
 
     .yellow-btn {
-        border-radius: 0 0 0 45vw;
-        -moz-border-radius: 0 0 0 45vw;
-        -webkit-border-radius: 0 0 0 45vw;
+        border-radius: 0 0 0 45vmax;
+        -moz-border-radius: 0 0 0 45vmax;
+        -webkit-border-radius: 0 0 0 45vmax;
     }
 
     .blue-btn {
-        border-radius: 0 0 45vw 0;
-        -moz-border-radius: 0 0 45vw 0;
-        -webkit-border-radius: 0 0 45vw 0;
+        border-radius: 0 0 45vmax 0;
+        -moz-border-radius: 0 0 45vmax 0;
+        -webkit-border-radius: 0 0 45vmax 0;
     }
     
     .inner-circle {
-        height: 55vw;
-        width: 55vw;
-        border-radius: 55vw;
+        height: 55vmax;
+        width: 55vmax;
+        border-radius: 55vmax;
     }    
-}
-
+/*}*/
+/*
 @media all and (orientation: landscape) {
     .game-button {
         height: 45vh;
@@ -148,4 +148,4 @@ body {
         width: 55vh;
         border-radius: 55vw;
     }    
-}
+}*/

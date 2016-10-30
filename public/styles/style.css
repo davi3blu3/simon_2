@@ -26,6 +26,10 @@ body {
     background-color: rgb(0, 155, 0);
 }
 
+.green-pressed {
+    background-color: rgb(0, 255, 0); 
+}
+
 .red-btn {
     background-color: rgb(155, 0, 0);
 }
@@ -78,38 +82,38 @@ body {
 
 /*@media all and (orientation: portrait) {*/
     .game-button {
-        height: 45vmax;
-        width: 45vmax;
+        height: 45vmin;
+        width: 45vmin;
     }
 
     .green-btn {
-        border-radius: 45vmax 0 0 0;
-        -moz-border-radius: 45vmax 0 0 0;
-        -webkit-border-radius: 45vmax 0 0 0;
+        border-radius: 45vmin 0 0 0;
+        -moz-border-radius: 45vmin 0 0 0;
+        -webkit-border-radius: 45vmin 0 0 0;
     }
 
     .red-btn {
-        border-radius: 0 45vmax 0 0;
-        -moz-border-radius: 0 45vmax 0 0;
-        -webkit-border-radius: 0 45vmax 0 0;
+        border-radius: 0 45vmin 0 0;
+        -moz-border-radius: 0 45vmin 0 0;
+        -webkit-border-radius: 0 45vmin 0 0;
     }
 
     .yellow-btn {
-        border-radius: 0 0 0 45vmax;
-        -moz-border-radius: 0 0 0 45vmax;
-        -webkit-border-radius: 0 0 0 45vmax;
+        border-radius: 0 0 0 45vmin;
+        -moz-border-radius: 0 0 0 45vmin;
+        -webkit-border-radius: 0 0 0 45vmin;
     }
 
     .blue-btn {
-        border-radius: 0 0 45vmax 0;
-        -moz-border-radius: 0 0 45vmax 0;
-        -webkit-border-radius: 0 0 45vmax 0;
+        border-radius: 0 0 45vmin 0;
+        -moz-border-radius: 0 0 45vmin 0;
+        -webkit-border-radius: 0 0 45vmin 0;
     }
     
     .inner-circle {
-        height: 55vmax;
-        width: 55vmax;
-        border-radius: 55vmax;
+        height: 55vmin;
+        width: 55vmin;
+        border-radius: 55vmin;
     }    
 /*}*/
 /*

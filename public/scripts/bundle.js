@@ -21466,29 +21466,53 @@
 /* 172 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 
 	var React = __webpack_require__(1);
 
+	var GreenButton = React.createClass({
+	    displayName: 'GreenButton',
+
+	    getInitialState: function getInitialState() {
+	        return {
+	            selected: ''
+	        };
+	    },
+	    handleClick: function handleClick() {
+	        var _this = this;
+
+	        if (this.state.selected === '') {
+	            this.setState({ selected: ' green-pressed' });
+	            // Play Audio
+	            setTimeout(function () {
+	                _this.setState({ selected: '' });
+	            }, 800);
+	        }
+	    },
+	    render: function render() {
+	        return React.createElement('div', { className: "green-btn game-button" + this.state.selected, onClick: this.handleClick });
+	    }
+	});
+
 	var GameButtons = React.createClass({
-	    displayName: "GameButtons",
+	    displayName: 'GameButtons',
 
 	    colorchange: function colorchange() {},
 	    render: function render() {
 	        return React.createElement(
-	            "div",
+	            'div',
 	            null,
 	            React.createElement(
-	                "div",
-	                { className: "row" },
-	                React.createElement("div", { id: "green", className: "green-btn game-button", onClick: colorchange(green) }),
-	                React.createElement("div", { id: "red", className: "red-btn game-button" })
+	                'div',
+	                { className: 'row' },
+	                React.createElement(GreenButton, null),
+	                React.createElement('div', { id: 'red', className: 'red-btn game-button' })
 	            ),
 	            React.createElement(
-	                "div",
-	                { className: "row" },
-	                React.createElement("div", { id: "yellow", className: "yellow-btn game-button" }),
-	                React.createElement("div", { id: "blue", className: "blue-btn game-button" })
+	                'div',
+	                { className: 'row' },
+	                React.createElement('div', { id: 'yellow', className: 'yellow-btn game-button' }),
+	                React.createElement('div', { id: 'blue', className: 'blue-btn game-button' })
 	            )
 	        );
 	    }

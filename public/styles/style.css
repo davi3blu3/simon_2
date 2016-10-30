@@ -1,0 +1,151 @@
+body {
+    background: #000;
+    text-align: center;
+    font-family: verdana, sans-serif;
+}
+
+.game-title {
+    font-size: 2.4rem;
+    margin-bottom: .4rem;
+}
+
+.container {
+    position: relative;
+    margin: 0 auto;
+}
+
+.game-button {
+	display: inline-block;
+}
+
+.game-controls {
+    vertical-align: top;
+}
+
+.green-btn {
+    background-color: rgb(0, 155, 0);
+}
+
+.red-btn {
+    background-color: rgb(155, 0, 0);
+}
+
+.yellow-btn {
+    background-color: rgb(155, 155, 0);
+}
+
+.blue-btn {
+    background-color: rgb(0, 0, 155);
+}
+
+.control-btn {
+    vertical-align: top;
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+    margin-bottom: 10px;
+}
+
+.strict-mode-on {
+    font-size: 1.25rem;
+    line-height: 1.9rem;
+    border: solid 2px blue; 
+    color: blue;
+}
+
+
+.inner-circle {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #000;
+    color: #eee;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.round-counter {
+    color: red;
+    padding: 0 .2rem;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+    display: inline-block;
+}
+
+@media all and (orientation: portrait) {
+    .game-button {
+        height: 45vw;
+        width: 45vw;
+    }
+
+    .green-btn {
+        border-radius: 45vw 0 0 0;
+        -moz-border-radius: 45vw 0 0 0;
+        -webkit-border-radius: 45vw 0 0 0;
+    }
+
+    .red-btn {
+        border-radius: 0 45vw 0 0;
+        -moz-border-radius: 0 45vw 0 0;
+        -webkit-border-radius: 0 45vw 0 0;
+    }
+
+    .yellow-btn {
+        border-radius: 0 0 0 45vw;
+        -moz-border-radius: 0 0 0 45vw;
+        -webkit-border-radius: 0 0 0 45vw;
+    }
+
+    .blue-btn {
+        border-radius: 0 0 45vw 0;
+        -moz-border-radius: 0 0 45vw 0;
+        -webkit-border-radius: 0 0 45vw 0;
+    }
+    
+    .inner-circle {
+        height: 55vw;
+        width: 55vw;
+        border-radius: 55vw;
+    }    
+}
+
+@media all and (orientation: landscape) {
+    .game-button {
+        height: 45vh;
+        width: 45vh;
+    }
+
+    .green-btn {
+        border-radius: 45vh 0 0 0;
+        -moz-border-radius: 45vh 0 0 0;
+        -webkit-border-radius: 45vh 0 0 0;
+    }
+
+    .red-btn {
+        border-radius: 0 45vh 0 0;
+        -moz-border-radius: 0 45vh 0 0;
+        -webkit-border-radius: 0 45vh 0 0;
+    }
+
+    .yellow-btn {
+        border-radius: 0 0 0 45vh;
+        -moz-border-radius: 0 0 0 45vh;
+        -webkit-border-radius: 0 0 0 45vh;
+    }
+
+    .blue-btn {
+        border-radius: 0 0 45vh 0;
+        -moz-border-radius: 0 0 45vh 0;
+        -webkit-border-radius: 0 0 45vh 0;
+    }
+
+    .inner-circle {
+        height: 55vh;
+        width: 55vh;
+        border-radius: 55vw;
+    }    
+}

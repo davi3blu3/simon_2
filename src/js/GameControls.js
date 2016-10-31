@@ -4,7 +4,7 @@ const GameControls = React.createClass({
     render () {
         return (
             <div className="inner-circle">
-                <h1 className="game-title">simon</h1>
+                <h1 className="game-title">Simon</h1>
                 <div className="game-controls">
                     <div id="counter" className="round-counter">00</div>
                     <button id="start" className="control-btn">start/restart</button>              

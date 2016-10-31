@@ -7,23 +7,26 @@ const Button = React.createClass({
     blueTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
     getInitialState: function(){
         return {
-            selected: ''
+            extraClass: ''
         };
     },
     handleClick: function(){
         if (this.state.selected === ''){
-            console.log(this.props.color + " button clicked!")
-            this.setState({selected: ' ' + this.props.color + '-pressed'})
+            // Change color to brighter version, with css element
+            this.setState({extraClass: ' ' + this.props.color + '-pressed'})
+
             // Play Audio
             this[this.props.color + 'Tone'].play()
+
+            // Revert color after delay by removing css element
             setTimeout( () => {
-                this.setState({selected: ''})
+                this.setState({extraClass: ''})
             }, 800)
         }
     },
     render () {
         return (
-                <div className={this.props.color + "-btn game-button" + this.state.selected} onClick={this.handleClick}></div>
+                <div className={this.props.color + "-btn game-button" + this.state.extraClass} onClick={this.handleClick}></div>
         )
     }
 })

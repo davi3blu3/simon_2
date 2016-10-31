@@ -21514,24 +21514,27 @@
 	    blueTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
 	    getInitialState: function getInitialState() {
 	        return {
-	            selected: ''
+	            extraClass: ''
 	        };
 	    },
 	    handleClick: function handleClick() {
 	        var _this = this;
 
 	        if (this.state.selected === '') {
-	            console.log(this.props.color + " button clicked!");
-	            this.setState({ selected: ' ' + this.props.color + '-pressed' });
+	            // Change color to brighter version, with css element
+	            this.setState({ extraClass: ' ' + this.props.color + '-pressed' });
+
 	            // Play Audio
 	            this[this.props.color + 'Tone'].play();
+
+	            // Revert color after delay by removing css element
 	            setTimeout(function () {
-	                _this.setState({ selected: '' });
+	                _this.setState({ extraClass: '' });
 	            }, 800);
 	        }
 	    },
 	    render: function render() {
-	        return React.createElement('div', { className: this.props.color + "-btn game-button" + this.state.selected, onClick: this.handleClick });
+	        return React.createElement('div', { className: this.props.color + "-btn game-button" + this.state.extraClass, onClick: this.handleClick });
 	    }
 	});
 

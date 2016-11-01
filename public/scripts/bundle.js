@@ -21474,7 +21474,10 @@
 	var GameButtons = React.createClass({
 	    displayName: 'GameButtons',
 
-	    colorchange: function colorchange() {},
+	    greenTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
+	    redTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
+	    yellowTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
+	    blueTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
 	    render: function render() {
 	        return React.createElement(
 	            'div',
@@ -21482,14 +21485,14 @@
 	            React.createElement(
 	                'div',
 	                { className: 'row' },
-	                React.createElement(Button, { color: 'green' }),
-	                React.createElement(Button, { color: 'red' })
+	                React.createElement(Button, { color: 'green', tone: this.greenTone }),
+	                React.createElement(Button, { color: 'red', tone: this.redTone })
 	            ),
 	            React.createElement(
 	                'div',
 	                { className: 'row' },
-	                React.createElement(Button, { color: 'yellow' }),
-	                React.createElement(Button, { color: 'blue' })
+	                React.createElement(Button, { color: 'yellow', tone: this.yellowTone }),
+	                React.createElement(Button, { color: 'blue', tone: this.blueTone })
 	            )
 	        );
 	    }
@@ -21501,40 +21504,36 @@
 /* 173 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 
 	var React = __webpack_require__(1);
 
 	var Button = React.createClass({
-	    displayName: 'Button',
+	    displayName: "Button",
 
-	    greenTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3'),
-	    redTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3'),
-	    yellowTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3'),
-	    blueTone: new Audio('https://s3.amazonaws.com/freecodecamp/simonSound4.mp3'),
 	    getInitialState: function getInitialState() {
 	        return {
-	            extraClass: ''
+	            pressed: false
 	        };
 	    },
 	    handleClick: function handleClick() {
 	        var _this = this;
 
-	        if (this.state.selected === '') {
-	            // Change color to brighter version, with css element
-	            this.setState({ extraClass: ' ' + this.props.color + '-pressed' });
-
-	            // Play Audio
-	            this[this.props.color + 'Tone'].play();
-
-	            // Revert color after delay by removing css element
+	        if (!this.state.pressed) {
+	            this.setState({ pressed: true });
+	            this.props.tone.play();
 	            setTimeout(function () {
-	                _this.setState({ extraClass: '' });
+	                _this.setState({ pressed: false });
 	            }, 800);
 	        }
 	    },
+	    classes: function classes() {
+	        var result = this.props.color + "-btn game-button";
+	        result += this.state.pressed ? " pressed" : "";
+	        return result;
+	    },
 	    render: function render() {
-	        return React.createElement('div', { className: this.props.color + "-btn game-button" + this.state.extraClass, onClick: this.handleClick });
+	        return React.createElement("div", { className: this.classes(), onClick: this.handleClick });
 	    }
 	});
 
@@ -21557,7 +21556,7 @@
 	            React.createElement(
 	                "h1",
 	                { className: "game-title" },
-	                "simon"
+	                "Simon"
 	            ),
 	            React.createElement(
 	                "div",
